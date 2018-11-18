@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Calendar creator</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" async></script>
+    </head>
+    <body>
+        <div id="form">
+            <form autocomplete="off">
+              <label for="getYear">Enter the year:</label><br>
+              <input type="text" name="year" id = "getYear"><br>
+              <label for="getMonth">Enter the month (from 1 to 12):</label><br>
+              <input type="text" name="month" id = "getMonth"><br>
+              <button type="button" onclick="createCalendar('calendar', 
+              document.getElementById('getYear').value,
+               document.getElementById('getMonth').value)">Create calendar</button>
+              <br><button type="button" onclick="deleteCalendar('calendar')">Delete calendar</button>
+            </form>
+          </div>
+          <div id="calendar"></div>
+    </body>
+</html>
