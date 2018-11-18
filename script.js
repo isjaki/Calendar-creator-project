@@ -29,7 +29,8 @@ function createCalendar(id, year, month) {
     // Let sunday be the last day of week with the given index of 6. 
     let firstDay = (date.getDay() == 0) ? 6 : date.getDay() - 1;
     
-    // The amount of rows needed for the table equals the number of empty cells before the first day of month plus the number of days in this month divided by the number of weekdays
+    // The amount of rows needed for the table equals the number of empty cells 
+    // before the first day of month plus the number of days in this month divided by the number of weekdays
     let numberOfRows = Math.ceil((firstDay + numberOfDaysInMonth) / week.length);
               
     for (let i = 0; i < numberOfRows; i++) {
