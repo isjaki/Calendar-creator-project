@@ -80,5 +80,3 @@ function deleteCalendar() {
       element.removeChild(element.children[i]);
     }
 }
-
-  
