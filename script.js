@@ -1,12 +1,29 @@
-function createCalendar(id, year, month) {
+let buttonCreate = document.getElementById('button-create');
+let buttonDelete = document.getElementById('button-delete');
+
+buttonCreate.addEventListener('click', createCalendar);
+buttonDelete.addEventListener('click', deleteCalendar);
+
+function createCalendar() {
+
+    let year = document.getElementById('getYear').value;
+    let month = document.getElementById('getMonth').value;
    
     // create elements for a table
-    let element = document.getElementById(id);
+    let element = document.getElementById('calendar');
     let table = document.createElement('table');
     let tBody = document.createElement('tbody');
     let tHead = document.createElement('tr');
     let tr;
-              
+
+    let caption = document.createElement('caption');
+
+    let date = new Date(year, month - 1);
+
+    let captionMonth = date.toLocaleString('en', {month: 'long'});
+    caption.innerHTML = `${captionMonth}, ${year}`;
+    
+    table.appendChild(caption);
     table.appendChild(tBody);
   
     // Create a table head. First, create an array with weekday names and then 
@@ -19,18 +36,16 @@ function createCalendar(id, year, month) {
       tHead.appendChild(th); // insert every th element into a table head
     }
   
-    table.firstChild.appendChild(tHead);
+    table.lastChild.appendChild(tHead);
   
     // The day with the given value of 0 gives the last day of the previous month.
     let numberOfDaysInMonth = new Date(year, month, 0).getDate();
               
-    let date = new Date(year, month - 1);
-              
     // Let sunday be the last day of week with the given index of 6. 
     let firstDay = (date.getDay() == 0) ? 6 : date.getDay() - 1;
     
-    // The amount of rows needed for the table equals the number of empty cells 
-    // before the first day of month plus the number of days in this month divided by the number of weekdays
+    // The amount of rows needed for the table equals the number of empty cells before the first day of month 
+    // plus the number of days in this month divided by the number of weekdays
     let numberOfRows = Math.ceil((firstDay + numberOfDaysInMonth) / week.length);
               
     for (let i = 0; i < numberOfRows; i++) {
@@ -42,7 +57,7 @@ function createCalendar(id, year, month) {
          tr.appendChild(td);
       }
   
-      table.firstChild.appendChild(tr);
+      table.lastChild.appendChild(tr);
     };
   
     let calendarCells = table.getElementsByTagName('td');
@@ -58,12 +73,10 @@ function createCalendar(id, year, month) {
     element.appendChild(table);
 }
   
-function deleteCalendar(id) {
-    let element = document.getElementById(id);
+function deleteCalendar() {
+    let element = document.getElementById('calendar');
 
     for (let i = element.children.length - 1; i >= 0; i--) {
       element.removeChild(element.children[i]);
     }
 }
-
-  
