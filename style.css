@@ -33,7 +33,7 @@ caption {
     font-weight: bold;
 }
   
-#form {
+#form-container {
     width: 30%;
     float: left;
     font-size: 20px;
@@ -47,7 +47,8 @@ caption {
     text-align: center;
 }
   
-input {
+input[type="number"] {
+    width: 190px;
     margin-bottom: 20px;
     padding: 10px;
     border: none;
@@ -58,12 +59,12 @@ input {
     transition: background-color 0.5s, box-shadow 0.5s;
 }
   
-input:focus {
+input[type="number"]:focus {
     background-color: #dee2e8;
     box-shadow: inset 0 0 10px #c1d4f2;
 }
   
-button {
+input[type="submit"], input[type="button"] {
     padding: 10px 20px 10px 20px;
     margin-bottom: 10px;
     font-size: 17px;
@@ -76,13 +77,12 @@ button {
     transition: background-color 0.5s;
 }
   
-button:active {
-    box-shadow: none;
+input[type="submit"]:active, input[type="button"]:active {
     padding: 9px 19px 9px 19px;
     box-shadow: inset 0 0 8px #000;
 }
   
-button:hover {
+input[type="submit"]:hover, input[type="button"]:hover {
     background-color: #233ce0;
 }
 
@@ -92,7 +92,7 @@ button:hover {
         width: 70%;
     }
 
-    #form {
+  #form-container {
         width: 30%;
     }
 }
@@ -103,7 +103,8 @@ button:hover {
       width: 100%;
       text-align: center;
     } 
-    #form {
+  
+    #form-container {
       float: none;
       width: 60%;
       margin: 0 auto;

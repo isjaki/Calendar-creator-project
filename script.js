@@ -1,11 +1,10 @@
-let buttonCreate = document.getElementById('button-create');
+let form = document.getElementById('form');
 let buttonDelete = document.getElementById('button-delete');
 
-buttonCreate.addEventListener('click', createCalendar);
+form.addEventListener('submit', createCalendar);
 buttonDelete.addEventListener('click', deleteCalendar);
 
 function createCalendar() {
-
     let year = document.getElementById('getYear').value;
     let month = document.getElementById('getMonth').value;
    
@@ -71,6 +70,7 @@ function createCalendar() {
     }
   
     element.appendChild(table);
+    event.preventDefault();
 }
   
 function deleteCalendar() {
