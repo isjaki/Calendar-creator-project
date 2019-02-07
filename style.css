@@ -92,7 +92,7 @@ input[type="submit"]:hover, input[type="button"]:hover {
         width: 70%;
     }
 
-    #form-container {
+  #form-container {
         width: 30%;
     }
 }
@@ -103,6 +103,7 @@ input[type="submit"]:hover, input[type="button"]:hover {
       width: 100%;
       text-align: center;
     } 
+  
     #form-container {
       float: none;
       width: 60%;

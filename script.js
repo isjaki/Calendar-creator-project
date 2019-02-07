@@ -70,7 +70,6 @@ function createCalendar() {
     }
   
     element.appendChild(table);
-  
     event.preventDefault();
 }
   
